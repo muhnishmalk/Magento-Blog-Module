@@ -1,4 +1,5 @@
 <?php
+
 namespace Cloud\Module\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
@@ -10,6 +11,7 @@ class InstallSchema implements InstallSchemaInterface
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $installer = $setup;
+
         $installer->startSetup();
 
         $table = $installer->getConnection()->newTable(
@@ -29,21 +31,21 @@ class InstallSchema implements InstallSchemaInterface
         )->addColumn(
             'description',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            '2M',
+            '64k',
             [],
             'Blog Description'
         )->addColumn(
             'status',
-            \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-            1,
-            ['nullable' => false, 'default' => 1],
-            'Blog Status'
+            \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+            null,
+            ['nullable' => false, 'default' => '0'],
+            'Status'
         )->setComment(
-            'Blog Table'
+            'Cloud Blog Table'
         );
+
         $installer->getConnection()->createTable($table);
 
         $installer->endSetup();
     }
 }
-

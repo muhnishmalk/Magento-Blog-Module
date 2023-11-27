@@ -1,4 +1,5 @@
 <?php
+
 use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
@@ -6,3 +7,4 @@ ComponentRegistrar::register(
     'Cloud_Module',
     __DIR__
 );
+

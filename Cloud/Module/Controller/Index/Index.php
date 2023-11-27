@@ -1,11 +1,12 @@
 <?php
-namespace Cloud\Module\Controller\Blog;
+
+namespace Cloud\Module\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Detail extends Action
+class Index extends Action
 {
     protected $resultPageFactory;
 
@@ -18,8 +19,8 @@ class Detail extends Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->set(__('Blog Detail'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Blog'));
+
         return $resultPage;
     }
 }
-

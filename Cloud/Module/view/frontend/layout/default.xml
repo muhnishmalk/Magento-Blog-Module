@@ -1,13 +1,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="footer_links">
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="cloud_module.blog" after="-">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="cloud.module.blog.link">
                 <arguments>
                     <argument name="label" xsi:type="string">Blog</argument>
-                    <argument name="path" xsi:type="string">cloud_module/blog</argument>
+                    <argument name="path" xsi:type="string">cloud</argument>
                 </arguments>
             </block>
         </referenceBlock>
     </body>
 </page>
-

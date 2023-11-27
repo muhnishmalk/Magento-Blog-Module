@@ -1,17 +1,17 @@
 <?php
-namespace Cloud\Module\Controller\Adminhtml\Blog;
+
+namespace Cloud\Module\Controller\Adminhtml\Post;
 
 use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Detail extends Action
+class Index extends Action
 {
     protected $resultPageFactory;
 
-    public function __construct(
-        Action\Context $context,
-        PageFactory $resultPageFactory
-    ) {
+    public function __construct(Context $context, PageFactory $resultPageFactory)
+    {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
@@ -19,12 +19,13 @@ class Detail extends Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend(__('Blog Post Detail'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Blog Posts'));
+
         return $resultPage;
     }
 
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Cloud_Module::blog');
+        return $this->_authorization->isAllowed('Cloud_Module::post');
     }
 }
