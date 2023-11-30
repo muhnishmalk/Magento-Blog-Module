@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Cloud_Blog::blog_content" title="Blog" module="Cloud_Blog" sortOrder="50"  resource="Cloud_Blog::blog_content" />
+        <add id="Cloud_Blog::post" title="Posts" module="Cloud_Blog" sortOrder="0" parent="Cloud_Blog::blog_content" action="blog/post" resource="Cloud_Blog::post"/>
+    </menu>
+</config>
